@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter the data:</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ relations_form.as_p }}
+            <input type="submit" name="" value="Submit">
+        </form>
+
+    </div>
+</body>
+</html>

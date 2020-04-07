@@ -1,0 +1,26 @@
+{% extends 'app_two/base.html' %}
+
+{% block panel_block %}
+<h4>This is the side panel</h4>
+{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron"><h1>This the current list of headings with {{ screen_shots }} Screen Shots!</h1></div>
+        <div>
+            {% if insert_headings %}
+            <table>
+                <thead>
+                    <th>Heading</th>
+                </thead>
+                {% for heading in insert_headings %}
+                <tr>
+                    <td>{{ heading }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+        <h4><a href="{% url 'app_two:relations' %}">Add more here</a></h4>
+        <h4><a href="{% url 'app_two:import_text' %}">Add more here</a></h4>
+    </div>
+{% endblock %}
